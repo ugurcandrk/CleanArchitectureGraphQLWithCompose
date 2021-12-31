@@ -1,4 +1,4 @@
-package com.example.cleanarchitecturegraphqlwithcompose.di.module
+package com.example.cleanarchitecturegraphqlwithcompose.di
 
 import com.example.cleanarchitecturegraphqlwithcompose.data.repository.CountriesRepositoryImp
 import com.example.cleanarchitecturegraphqlwithcompose.domain.CountriesRepository

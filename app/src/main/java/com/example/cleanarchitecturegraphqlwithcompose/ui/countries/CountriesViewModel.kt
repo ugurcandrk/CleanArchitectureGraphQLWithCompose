@@ -17,6 +17,7 @@ class CountriesViewModel @Inject constructor(
 ) : ViewModel() {
 
     val error = MutableLiveData<String?>()
+    val loading = MutableLiveData(true)
 
     private val _countries = MutableLiveData<List<CountryUI>>()
     val countries: LiveData<List<CountryUI>> = _countries
@@ -25,9 +26,12 @@ class CountriesViewModel @Inject constructor(
         getCountries()
     }
 
-     fun getCountries() {
+    private fun getCountries() {
 
         viewModelScope.launch {
+
+            loading.value = true
+
             when (val result = countriesUseCase.execute()) {
                 is ResultModel.Success -> {
                     result.data?.let { data ->
@@ -38,6 +42,8 @@ class CountriesViewModel @Inject constructor(
                     error.value = result.message
                 }
             }
+
+            loading.value = false
         }
     }
 }

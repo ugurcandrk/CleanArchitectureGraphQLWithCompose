@@ -11,7 +11,6 @@ class CountriesMapper @Inject constructor() {
         return data?.countries?.map { country ->
             CountryUI(
                 name = country.name,
-                code = country.code,
                 phone = country.phone,
                 capital = country.capital,
                 currency = country.currency,

@@ -1,7 +1,8 @@
-package com.example.cleanarchitecturegraphqlwithcompose
+package com.example.cleanarchitecturegraphqlwithcompose.ui.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.cleanarchitecturegraphqlwithcompose.R
 import com.example.cleanarchitecturegraphqlwithcompose.ui.countries.CountriesFragment
 import dagger.hilt.android.AndroidEntryPoint
 

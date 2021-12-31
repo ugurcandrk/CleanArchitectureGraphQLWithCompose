@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.cleanarchitecturegraphqlwithcompose.databinding.FragmentCountriesBinding
@@ -40,12 +42,18 @@ class CountriesFragment : Fragment() {
 
         with(viewModel) {
 
-            countries.observe(viewLifecycleOwner, {
-                val data = it
-            })
+            binding.countriesComposeView.setContent {
 
-            error.observe(viewLifecycleOwner, {
-                val error = it
+                val countryList by countries.observeAsState()
+                val loadingState by loading.observeAsState(true)
+
+                CountriesCompose(countryList, loadingState)
+            }
+
+            error.observe(viewLifecycleOwner, { errorMessage ->
+
+                // Burada gerekli aksiyonu alabilirsiniz.
+
             })
         }
     }

@@ -1,4 +1,4 @@
-package com.example.cleanarchitecturegraphqlwithcompose.di.module
+package com.example.cleanarchitecturegraphqlwithcompose.di
 
 import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.network.okHttpClient
