@@ -1,6 +1,6 @@
 # Clean Architecture Project With GraphQL and Compose
 
-- It is an android project that lists countries using GraphQl and Compose. Used api: https://countries.trevorblades.com/.
+- It is an android project that lists countries using GraphQl and Compose. Used api: https://countries.trevorblades.com/
 - It is includes Apollo, Mvvm, Hilt, Compose
 
 # Sample:
